@@ -46,6 +46,7 @@
                             confirmButtonText:"sim",
                             confirmButtonColor:"#3085d6"
                         }).then((result)=> {
+                            //autenticação para criar um novo usuário
                             signUp(email,password)
                         })
                         break;
@@ -58,7 +59,7 @@
         })
 }
 
-//autenticação
+//autenticação para criar um novo usuário e condições para senha
 function signUp(email,password){
     firebase
     .auth()
