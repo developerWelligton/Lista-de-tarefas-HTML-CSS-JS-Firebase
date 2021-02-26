@@ -59,6 +59,7 @@
         })
 }
 
+//REGISTRO
 //autenticação para criar um novo usuário e condições para senha
 function signUp(email,password){
     firebase
@@ -89,4 +90,9 @@ function signUp(email,password){
                     })
         }
     })
+}
+
+function logout(){
+    //acessa uma função específica do firebase : firebase.auth.signOut()
+    firebase.auth().signOut()
 }
