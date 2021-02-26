@@ -90,19 +90,14 @@
                   placeholder="Nova tarefa"
                   
                 />
-                <button class="btn btn-primary col-xs-12 col-md-2  p-2 m-1" >
+                <button class="btn btn-primary col-xs-12 col-md-2  p-2 m-1" 
+                onclick="addTasks()">
                   Adicionar
                 </button>
                 <ul id="itemList" class="list-group list-group-flush">
-                    <li class="list-group-item d-flex justify-content-between">
-                      Atividade 1
-                        <button class="btn btn-primary  ">Excluir</button>
-                    </li>
+                    <li class="list-group-list">Loading ...</li>
 
-                    <li class="list-group-item d-flex justify-content-between">
-                      Atividade 2
-                        <button class="btn btn-primary">Excluir</button>
-                    </li>
+                    
                 </ul>
               </div>
     
@@ -118,6 +113,7 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-firestore.js"></script>
 <script src="./js/init.js"></script>
 <script src="./js/auth.js"></script>
 <script src="./js/index.js"></script>
