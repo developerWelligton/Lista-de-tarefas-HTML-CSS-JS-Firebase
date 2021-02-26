@@ -10,13 +10,7 @@ body{
 #page.toggled #sidebar{
     margin-left: -15rem;
 }
-#sidebar-toggle{
-    position: relative;
-    left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    
-}
+ 
 #sidebar{
     min-height: 100vh;
     margin-left: 0;
@@ -38,6 +32,7 @@ body{
     width: 100%;
     
 }
+ 
 #loginLogo img{
     width: 70%;
 }
