@@ -71,7 +71,7 @@
                     >
                   <a href="profile.html" class="dropdown-item">Perfil</a>
                   <div class="dropdown-divider"></div>
-                  <a href="" class="dropdown-item" onclick="logout()">Sair</a>
+                  <a href="profile.html" class="dropdown-item" onclick="logout()">Sair</a>
                     </div>
                     </li>
                      
@@ -80,28 +80,29 @@
             </nav>
             <!-- Estrutura para listagem estática de tarefas-->
             <div class="container-fluid">
-              <h1 class="mt-4">Minha lista de tarefas.</h1>
-              <div class="row"  >
-                <input
-                  id="newItem"
-                  name="newItem"
-                  class="col-5 ml-2 p-1 m-1"
-                  type="text"
-                  placeholder="Nova tarefa"
-                  
-                />
-                <button class="btn btn-primary col-xs-12 col-md-2  p-2 m-1" 
-                onclick="addTasks()">
-                  Adicionar
-                </button>
-                <ul id="itemList" class="list-group list-group-flush">
-                    <li class="list-group-list">Loading ...</li>
-
-                    
-                </ul>
+              <div class="card">
+                <div class="card-body">
+                  <h1 class="card-title mt-4">Meu perfil</h1>
+                  <h5 id="userInfo" class="card-subtitle mb-5">Perfil</h5>
+                  <form>
+                    <div class="form-group">
+                      <label for="inputFirstName">Nome</label>
+                      <input id="inputFirstName" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                      <label for="inputLastName">Sobrenome</label>
+                      <input id="inputLastName" type="text" class="form-control" />
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                       onclick="saveProfile()"
+                    >
+                      Salvar perfil
+                    </button>
+                  </form>
+                </div>
               </div>
-    
-             
             </div>
 
         </div>
@@ -116,7 +117,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-firestore.js"></script>
 <script src="./js/init.js"></script>
 <script src="./js/auth.js"></script>
-<script src="./js/index.js"></script>
+<script src="./js/profile.js"></script>
 <script>
     $("#sidebar-toggle").click(function (e){
         e.preventDefault()

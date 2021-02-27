@@ -1,11 +1,17 @@
 //conexao com banco
 const db = firebase.firestore()
-let tasks = [] 
+let tasks = []
+let currentUser = {} 
 
 //pegar a informação do usuário autenticado
 function getUser(){
     firebase.auth().onAuthStateChanged((user)=>{//escutador
+        //está autenticado ?
         if(user){
+            //pega o id do usuário autenticado
+            currentUser.uid = user.uid
+            //leitura somente quando o usuário estiver autenticado
+            readTasks()
             let userLabel = document.getElementById("navbarDropdownUser")
             userLabel.innerHTML = user.email
         }else{
@@ -69,8 +75,12 @@ let itemList = document.getElementById("itemList")
 //ler o dados da firebase 
 async function readTasks(){
     tasks = [] 
-    const logTasks = await db.collection("tasks").get()
-    
+    //fazer leitura filtrando o usuário
+    const logTasks = await db
+    .collection("tasks")
+    .where("owner","==",currentUser.uid)
+    .get()
+    //fazer alteração nas regras de permisões na firebase
     for(doc of logTasks.docs){
         tasks.push({
             id:doc.id,
@@ -85,7 +95,11 @@ async function addTasks(){
     const title = document.getElementById("newItem").value
     if(title != ''){
       await db.collection('tasks').add({
-        title:title
+        title:title,
+        //filtrar tarefa pro usuário
+        //owner serve para saber qual usuário ta gravando essa tarefa
+        //assim é preciso criar um objeto global
+        owner: currentUser.uid,
     })  
      //renderizar!
     readTasks()
@@ -107,5 +121,5 @@ async function deleteTask(id){
 //carregamento da page
 window.onload = function(){
     getUser()
-    readTasks().orderBy();
+    //readTasks(); leitura global
 }
