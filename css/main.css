@@ -2,6 +2,7 @@
 
 body{
     font-family: Nunito,sans-serif;
+     
 }
 
 #page{
@@ -34,5 +35,7 @@ body{
 }
  
 #loginLogo img{
-    width: 70%;
+    width:100%;
+     
 }
+
