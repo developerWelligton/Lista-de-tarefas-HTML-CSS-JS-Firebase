@@ -1,7 +1,3 @@
-# todo-list
-todo-list em desenvolvimento 
+# Lista de tarefa : Versão 1.0
 
-#Versão 1.0
-
-#Acessem!
-#https://todo-list-49448.web.app/
+# Acessem: https://todo-list-49448.web.app/
